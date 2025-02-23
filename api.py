@@ -14,7 +14,7 @@ my_collections = db['SensorData']
 @app.route('/sensor', methods=['POST'])
 def receive_sensor_data():
     try:
-        data = request.json  # Ambil data dari ESP32
+        data = request.json  # Ambil data yang berasal dari ESP32
         data["timestamp"] = datetime.datetime.utcnow()  
         
         my_collections.insert_one(data)
