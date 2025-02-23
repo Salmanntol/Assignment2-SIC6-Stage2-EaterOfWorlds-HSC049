@@ -1,1 +1,1 @@
-"# Assignment2-SIC6-Stage2-EaterOfWorlds-HSC049" 
+# Assignment2-SIC6-Stage2-EaterOfWorlds-HSC049
