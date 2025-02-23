@@ -61,13 +61,13 @@ def sub_cb(topic, msg):
     else:
         print("Perintah tidak dikenali")
 
-# Hubungkan ke WiFi
+# Menghubungkan ke WiFi
 if not do_connect():
     print("Coba periksa koneksi WiFi, lalu restart ESP32.")
     while True:
         time.sleep(1)
 
-# Hubungkan ke MQTT
+# Menghubungkan ke MQTT
 print("Menghubungkan ke MQTT server...")
 client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER)
 client.set_callback(sub_cb)
