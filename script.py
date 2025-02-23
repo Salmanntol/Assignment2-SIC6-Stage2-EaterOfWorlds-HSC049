@@ -24,9 +24,9 @@ UBIDOTS_HEADERS = {
 FLASK_API_URI = "http://192.168.1.10:5000/sensor"
 
 # Pin Setup
-led = Pin(4, Pin.OUT)
-sensor = dht.DHT11(Pin(5))
-ldr = ADC(Pin(34))  
+led = Pin(2, Pin.OUT)
+sensor = dht.DHT11(Pin(4))
+ldr = ADC(Pin(34))  # pin wajib di pin 34
 ldr.atten(ADC.ATTN_11DB)
 
 def do_connect():
@@ -89,7 +89,10 @@ while True:
         print(f"Suhu: {suhu}°C, Kelembaban: {kelembaban}%, Cahaya: {ldr_value}")
 
         # Mengontrol LED berdasarkan suhu
-        led.on() if suhu >= 30 else led.off()
+        if suhu >= 30:
+           led.on()
+        else:
+           led.off()
         
         # Mengirim data ke MQTT Broker
         message = ujson.dumps({"temp": suhu,
