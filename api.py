@@ -15,7 +15,7 @@ my_collections = db['SensorData']
 def receive_sensor_data():
     try:
         data = request.json  # Ambil data yang berasal dari ESP32
-        data["timestamp"] = datetime.datetime.utcnow()  
+        data["timestamp"] = datetime.datetime.now()  
         
         my_collections.insert_one(data)
         
