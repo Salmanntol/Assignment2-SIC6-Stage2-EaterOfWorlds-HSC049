@@ -30,7 +30,6 @@ ldr = ADC(Pin(34))
 ldr.atten(ADC.ATTN_11DB)
 
 def do_connect():
-    """Menghubungkan ke jaringan WiFi."""
     sta_if = network.WLAN(network.STA_IF)
     if not sta_if.isconnected():
         print('Menghubungkan ke jaringan WiFi...')
@@ -50,7 +49,6 @@ def do_connect():
     return True
 
 def sub_cb(topic, msg):
-    """Callback untuk pesan MQTT."""
     msg = msg.decode('utf-8').strip().lower()
     print("Pesan diterima:", msg)
 

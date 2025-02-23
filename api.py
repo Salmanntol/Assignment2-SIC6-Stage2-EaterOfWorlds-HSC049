@@ -11,9 +11,6 @@ client = MongoClient(uri)
 db = client['MyDatabase'] 
 my_collections = db['SensorData']
 
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
-
 @app.route('/sensor', methods=['POST'])
 def receive_sensor_data():
     try:
