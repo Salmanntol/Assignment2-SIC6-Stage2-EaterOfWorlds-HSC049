@@ -34,7 +34,7 @@ def do_connect():
     if not sta_if.isconnected():
         print('Menghubungkan ke jaringan WiFi...')
         sta_if.active(True)
-        sta_if.connect('SALMA AA', 'azizah21')
+        sta_if.connect('LAB-PPLG', 'PPLG2024')
         
         timeout = 10
         while not sta_if.isconnected() and timeout > 0:
