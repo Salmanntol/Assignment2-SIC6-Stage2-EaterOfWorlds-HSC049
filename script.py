@@ -21,12 +21,12 @@ UBIDOTS_HEADERS = {
 }
 
 # Flask API URL
-FLASK_API_URI = "http://192.168.1.10:5000/sensor"
+FLASK_API_URI = "http://192.168.1.10:5000/sensor" # sesuaikan dengan IP jaringan kalian supaya tidak error
 
 # Pin Setup
 led = Pin(2, Pin.OUT)
 sensor = dht.DHT11(Pin(4))
-ldr = ADC(Pin(34))  # pin wajib di pin 34
+ldr = ADC(Pin(34))  # pin hanya bisa pin 29,31,32,dan 34
 ldr.atten(ADC.ATTN_11DB)
 
 def do_connect():
